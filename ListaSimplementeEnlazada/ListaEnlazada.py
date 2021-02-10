@@ -41,3 +41,14 @@ class ListaEnlazada:
                 print (str(aux.getDato()),end="")
             aux = aux.getSiguiente()
         print ("\n")
+
+    def buscarNodo(self, valor):
+        aux = self.cabeza
+        valorEncontrado = 0
+        while ((aux != None) and (valorEncontrado == 0)):
+            if aux.getDato() == valor:
+                valorEncontrado = 1
+                print("\nEl valor fue encontrado.")
+            else:
+                aux = aux.getSiguiente()
+        
