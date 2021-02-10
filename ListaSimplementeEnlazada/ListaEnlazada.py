@@ -14,6 +14,11 @@ class ListaEnlazada:
     def queHayEnCabeza(self):
         return self.cabeza.getDato
 
+    def extraerCabeza(self):
+        aux = self.cabeza
+        self.cabeza = self.cabeza.getSiguiente()
+        aux.setSiguiente(None)
+
     def recorrerLista(self):
         aux = self.cabeza
         print ("\nLa lista es: \n")
