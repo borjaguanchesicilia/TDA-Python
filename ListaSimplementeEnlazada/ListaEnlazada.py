@@ -14,7 +14,7 @@ class ListaEnlazada:
         anteriorNodo.setSiguiente(nuevoNodo)
 
     def queHayEnCabeza(self):
-        return self.cabeza.getDato
+        print ("\nEn la cabeza hay: " + str(self.cabeza.getDato()))
 
     def extraerCabeza(self):
         aux = self.cabeza
