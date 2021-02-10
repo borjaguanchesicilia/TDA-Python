@@ -1,7 +1,7 @@
 import ListaEnlazada as l
 import Nodo as n
 
-print ("\n\nProbamos el método extraer por cualquier nodo.")
+print ("\n\nProbamos el método buscar valor.")
 
 listaSimple = l.ListaEnlazada()
 
