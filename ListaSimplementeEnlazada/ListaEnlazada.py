@@ -1,3 +1,5 @@
+import sys
+
 class ListaEnlazada:
 
     def __init__(self):
@@ -18,6 +20,16 @@ class ListaEnlazada:
         aux = self.cabeza
         self.cabeza = self.cabeza.getSiguiente()
         aux.setSiguiente(None)
+
+    def extraerN(self, anteriorNodo):
+        if anteriorNodo == None:
+            sys.exit()
+        else:
+            aux = anteriorNodo.getSiguiente()
+            if anteriorNodo == None:
+                sys.exit()
+            else:
+                anteriorNodo.setSiguiente(aux.getSiguiente())
 
     def recorrerLista(self):
         aux = self.cabeza
