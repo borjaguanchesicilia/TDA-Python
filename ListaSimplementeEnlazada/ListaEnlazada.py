@@ -23,4 +23,4 @@ class ListaEnlazada:
             else:
                 print (str(aux.getDato()),end="")
             aux = aux.getSiguiente()
-        print ("\n\n")
+        print ("\n")
