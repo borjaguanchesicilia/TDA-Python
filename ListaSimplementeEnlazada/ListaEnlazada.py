@@ -48,7 +48,11 @@ class ListaEnlazada:
         while ((aux != None) and (valorEncontrado == 0)):
             if aux.getDato() == valor:
                 valorEncontrado = 1
-                print("\nEl valor fue encontrado.")
             else:
                 aux = aux.getSiguiente()
+
+        if valorEncontrado == 1:
+            print("\nEl valor fue encontrado.")
+        else:
+            print("\nEl valor NO fue encontrado.")
         
