@@ -10,9 +10,15 @@ class ListaDoblementeEnlazada:
             self.cabeza = self.cola = nodo
         else:
             nodo.siguiente = self.cabeza
-            aux = nodo.anterior
-            self.cabeza = aux
             self.cabeza = nodo
+        self.tam += 1
+
+    def insertarCola(self, nodo):
+        if self.tam == 0:
+            self.cola = nodo
+        else:
+            nodo.anterior = self.cola
+            self.cola = nodo
         self.tam += 1
 
     def queHayEnCabeza(self):
