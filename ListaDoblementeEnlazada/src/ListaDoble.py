@@ -30,15 +30,16 @@ class ListaDoblementeEnlazada:
         print ("\nEn la cola hay: " + str(self.cola.dato))
 
     def extraerCabeza(self):
-        aux = self.cabeza
-        self.cabeza = self.cabeza.siguiente
-        if self.cabeza != None:
-            self.cabeza.anterior = None
-        else:
-            self.cola = None
+        if self.tam != 0:
+            aux = self.cabeza
+            self.cabeza = self.cabeza.siguiente
+            if self.cabeza != None:
+                self.cabeza.anterior = None
+            else:
+                self.cola = None
 
-        self.tam -=1
-        aux.siguiente = None
+            self.tam -=1
+            aux.siguiente = None
 
     def recorrerLista(self):
         aux = self.cabeza
