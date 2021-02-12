@@ -1,3 +1,5 @@
+import NodoD as n
+
 class ListaDoblementeEnlazada:
 
     def __init__(self):
@@ -10,7 +12,7 @@ class ListaDoblementeEnlazada:
             self.cabeza = self.cola = nodo
         else:
             nodo.siguiente = self.cabeza
-            self.cola.anterior = nodo
+            self.cabeza.anterior = nodo
             self.cabeza = nodo
         self.tam += 1
 
@@ -20,7 +22,7 @@ class ListaDoblementeEnlazada:
         else:
             nodo.anterior = self.cola
             self.cola.siguiente = nodo
-            self.cola = nodo
+            self.cola = nodo    
         self.tam += 1
 
     def queHayEnCabeza(self):
@@ -40,6 +42,18 @@ class ListaDoblementeEnlazada:
 
             self.tam -=1
             aux.siguiente = None
+
+    def extraerCola(self):
+        if self.tam != 0:
+            aux = self.cola
+            self.cola = self.cola.anterior
+            if self.cola != None:
+                self.cola.siguiente = None
+            else:
+                self.cabeza = None
+
+            self.tam -=1
+            aux.anterior = None
 
     def recorrerLista(self):
         aux = self.cabeza
