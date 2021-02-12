@@ -4,6 +4,7 @@ class Cola:
         self.vect = []
         self.primero = 0
         self.ultimo = -1
+        self.auxPop = 0
 
     def vacia(self):
         if self.ultimo < self.primero:
@@ -18,10 +19,12 @@ class Cola:
         self.ultimo  += 1
         self.vect.append(dato)
 
-    def pop(self):    
+    def pop(self):
+        assert self.ultimo > self.primero, 'La cola está vacía'
         self.primero  += 1
-        self.vect.pop(0)
-        self.vect.insert(0, ' ')
+        self.vect.pop(self.auxPop)
+        self.vect.insert(self.auxPop, ' ')
+        self.auxPop += 1
     
     def mostrar(self):
         print ("\nLa cola es:\n")
