@@ -14,6 +14,10 @@ class Pila:
         self.top += 1
         self.vect.append(dato)
 
+    def pop(self):
+        self.top -= 1
+        self.vect.pop()
+
     def mostrar(self):
         tam = len(self.vect)
         self.vect.reverse()
