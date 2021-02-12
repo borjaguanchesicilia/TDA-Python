@@ -6,8 +6,10 @@ miPila = p.Pila()
 
 miPila.vacia()
 
-for i in range(5):
-    miPila.push(i)
+miPila.push(1)
+miPila.push(2)
+miPila.push(3)
+miPila.push(4)
 
 miPila.mostrar()
 
