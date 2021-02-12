@@ -1,6 +1,8 @@
 import NodoD as n
 import ListaDoble as l
 
+print ("\n\nProbamos el método extraer por cabeza.")
+
 ListaDoble = l.ListaDoblementeEnlazada()
 
 n1 = n.NodoD(1)
