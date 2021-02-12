@@ -1,5 +1,7 @@
 import Pila as p
 
+print ("\nProbamos el método que hay en el top.")
+
 miPila = p.Pila()
 
 miPila.vacia()
