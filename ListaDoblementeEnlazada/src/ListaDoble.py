@@ -30,48 +30,48 @@ class ListaDoblementeEnlazada:
         print ("\nEn la cola hay: " + str(self.cola.dato))
 
     def extraerCabeza(self):
-        if self.tam != 0:
-            aux = self.cabeza
-            self.cabeza = self.cabeza.siguiente
-            if self.cabeza != None:
-                self.cabeza.anterior = None
-            else:
-                self.cola = None
+        assert self.tam != 0, 'La lista está vacía'
+        aux = self.cabeza
+        self.cabeza = self.cabeza.siguiente
+        if self.cabeza != None:
+            self.cabeza.anterior = None
+        else:
+            self.cola = None
 
-            self.tam -=1
-            aux.siguiente = None
+        self.tam -=1
+        aux.siguiente = None
 
     def extraerCola(self):
-        if self.tam != 0:
-            aux = self.cola
-            self.cola = self.cola.anterior
-            if self.cola != None:
-                self.cola.siguiente = None
-            else:
-                self.cabeza = None
+        assert self.tam != 0, 'La lista está vacía'
+        aux = self.cola
+        self.cola = self.cola.anterior
+        if self.cola != None:
+            self.cola.siguiente = None
+        else:
+            self.cabeza = None
 
-            self.tam -=1
-            aux.anterior = None
+        self.tam -=1
+        aux.anterior = None
 
     def extraccionN(self, nodo):
-        if nodo != None:
-            if nodo.anterior != None:
-                aux = nodo.siguiente
-                nodoAnterior = nodo.anterior
-                nodoAnterior.siguiente = aux
-            else:
-                self.cabeza = nodo.siguiente
+        assert nodo != None
+        if nodo.anterior != None:
+            aux = nodo.siguiente
+            nodoAnterior = nodo.anterior
+            nodoAnterior.siguiente = aux
+        else:
+            self.cabeza = nodo.siguiente
 
-            if nodo.siguiente != None:
-                aux = nodo.anterior
-                nodoSiguiente = nodo.siguiente
-                nodoSiguiente.anterior = aux
+        if nodo.siguiente != None:
+            aux = nodo.anterior
+            nodoSiguiente = nodo.siguiente
+            nodoSiguiente.anterior = aux
 
-            else:
-                self.cola = nodo.anterior
+        else:
+            self.cola = nodo.anterior
 
-            del nodo
-            self.tam -= 1
+        del nodo
+        self.tam -= 1
 
     def recorrerLista(self):
         aux = self.cabeza
