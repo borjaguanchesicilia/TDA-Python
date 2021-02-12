@@ -1,7 +1,5 @@
-import NodoD as n
-
 class ListaDoblementeEnlazada:
-
+    
     def __init__(self):
         self.cabeza = None
         self.cola = None
