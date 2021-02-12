@@ -55,6 +55,26 @@ class ListaDoblementeEnlazada:
             self.tam -=1
             aux.anterior = None
 
+    def extraccionN(self, nodo):
+        if nodo != None:
+            if nodo.anterior != None:
+                aux = nodo.siguiente
+                nodoAnterior = nodo.anterior
+                nodoAnterior.siguiente = aux
+            else:
+                self.cabeza = nodo.siguiente
+
+            if nodo.siguiente != None:
+                aux = nodo.anterior
+                nodoSiguiente = nodo.siguiente
+                nodoSiguiente.anterior = aux
+
+            else:
+                self.cola = nodo.anterior
+
+            del nodo
+            self.tam -= 1
+
     def recorrerLista(self):
         aux = self.cabeza
         print ("\nLa lista es: \n")
