@@ -16,5 +16,9 @@ class Pila:
 
     def mostrar(self):
         tam = len(self.vect)
+        self.vect.reverse()
+        print ("La pila es: ")
         for i in range(tam):
             print (self.vect[i])
+        print ("\n\n")
+        self.vect.reverse()
