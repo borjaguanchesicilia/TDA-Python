@@ -18,11 +18,14 @@ class Pila:
         self.top -= 1
         self.vect.pop()
 
+    def queHayEnTop(self):
+        print  ("\nEn el  top hay: " + str(self.vect.index(self.top)))
+
     def mostrar(self):
         tam = len(self.vect)
         self.vect.reverse()
-        print ("La pila es: ")
+        print ("\nLa pila es: ")
         for i in range(tam):
             print (self.vect[i])
-        print ("\n\n")
+        print ("\n")
         self.vect.reverse()
